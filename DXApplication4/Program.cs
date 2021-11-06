@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DevExpress.Xpo;
+using DXApplication4.sisstemadelibreria;
 
 namespace DXApplication4
 {
@@ -16,11 +18,14 @@ namespace DXApplication4
         [STAThread]
         static void Main()
         {
+            
+            XpoDefault.DataLayer = XpoDefault.GetDataLayer(
+                ConnectionHelper.ConnectionString,DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema
+                );             
+                
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            BonusSkins.Register();
-            Application.Run(new Form1());
+           Application.Run(new Form1());
         }
     }
 }

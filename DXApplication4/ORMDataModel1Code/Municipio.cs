@@ -10,6 +10,11 @@ namespace DXApplication4.sisstemadelibreria
     {
         public Municipio(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        public static implicit operator Municipio(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
