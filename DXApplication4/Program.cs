@@ -6,9 +6,10 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.Xpo;
-using DXApplication4.sisstemadelibreria;
+using SistemaLibreria;
+using ModeloDatos.ORM;
 
-namespace DXApplication4
+namespace SistemaLibreria
 {
     static class Program
     {
@@ -20,12 +21,12 @@ namespace DXApplication4
         {
             
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(
-                ConnectionHelper.ConnectionString,DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema
+                ConnectionHelper.ConnectionString,DevExpress.Xpo.DB.AutoCreateOption.None
                 );             
                 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new Form1());
+            Application.Run(new SistemaLibreria.IU.Login());
         }
     }
 }

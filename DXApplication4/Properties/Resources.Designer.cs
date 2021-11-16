@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DXApplication4.Properties
+namespace SistemaLibreria.Properties
 {
 
 
