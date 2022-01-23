@@ -18,7 +18,7 @@ namespace ModeloDatos.ORM
     public partial class Marca : XPLiteObject
     {
         int fId;
-        [Key]
+        [Key(true)]
         [Persistent(@"id")]
         public int Id
         {

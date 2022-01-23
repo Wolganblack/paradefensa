@@ -8,8 +8,11 @@ using DevExpress.LookAndFeel;
 using DevExpress.Xpo;
 using SistemaLibreria;
 using ModeloDatos.ORM;
+using SistemaLibreria.UIUI;
 
-namespace SistemaLibreria
+
+
+namespace SistemaLibreria.UIUI
 {
     static class Program
     {
@@ -19,14 +22,14 @@ namespace SistemaLibreria
         [STAThread]
         static void Main()
         {
-            
+
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(
-                ConnectionHelper.ConnectionString,DevExpress.Xpo.DB.AutoCreateOption.None
-                );             
-                
+                 ConnectionHelper.ConnectionString,
+                 DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SistemaLibreria.IU.Login());
-        }
+            Application.Run(new SistemaLibreria.UI.Clientes());
+        } 
     }
 }

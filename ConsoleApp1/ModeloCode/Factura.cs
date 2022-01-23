@@ -10,6 +10,22 @@ namespace ModeloDatos.ORM
     {
         public Factura(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+
+        public bool Validar()
+        {
+            if (this.ClienteId == null)
+            {
+                return false;
+            }
+
+            if (this.DetalleFacturas == null || this.DetalleFacturas.Count == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 
 }

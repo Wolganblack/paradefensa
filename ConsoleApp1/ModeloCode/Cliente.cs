@@ -10,6 +10,17 @@ namespace ModeloDatos.ORM
     {
         public Cliente(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+
+        public string Nombre_apellido
+        {
+            get
+            {
+                return Nombre + "  " + Apellido;
+            }
+
+        }
+        
     }
 
 }
