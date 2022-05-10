@@ -73,11 +73,17 @@
     <Compile Include="UI\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controles\Proveedor.cs">
+    <Compile Include="UI\Controles\Agregarcliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Controles\Proveedor.Designer.cs">
-      <DependentUpon>Proveedor.cs</DependentUpon>
+    <Compile Include="UI\Controles\Agregarcliente.Designer.cs">
+      <DependentUpon>Agregarcliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Proveedor\AgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Proveedor\AgregarProveedor.Designer.cs">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
@@ -99,11 +105,32 @@
     <Compile Include="UI\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Producto\ListaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Producto\ListaProducto.Designer.cs">
+      <DependentUpon>ListaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Producto\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Producto\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Proveedor\ListaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Proveedor\ListaProveedores.Designer.cs">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Controles\Proveedor.resx">
-      <DependentUpon>Proveedor.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controles\Agregarcliente.resx">
+      <DependentUpon>Agregarcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Proveedor\AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -124,6 +151,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Producto\ListaProducto.resx">
+      <DependentUpon>ListaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Producto\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Proveedor\ListaProveedores.resx">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

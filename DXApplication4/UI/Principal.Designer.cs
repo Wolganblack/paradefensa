@@ -33,12 +33,12 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.IconosSharedImageCollection = new DevExpress.Utils.SharedImageCollection(this.components);
             this.ClienteBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.ProveedoresBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.InicioRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.ProductoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection.ImageSource)).BeginInit();
@@ -51,15 +51,16 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ClienteBarButtonItem,
-            this.barButtonItem1});
+            this.ProveedoresBarButtonItem,
+            this.ProductoBarButtonItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 3;
-            this.ribbon.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
+            this.ribbon.MaxItemId = 1;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(1041, 178);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // IconosSharedImageCollection
             // 
@@ -231,22 +232,34 @@
             // 
             this.ClienteBarButtonItem.Caption = "Clientes";
             this.ClienteBarButtonItem.Id = 1;
+            this.ClienteBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ClienteBarButtonItem.ImageOptions.Image")));
             this.ClienteBarButtonItem.ImageOptions.ImageIndex = 104;
+            this.ClienteBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ClienteBarButtonItem.ImageOptions.LargeImage")));
             this.ClienteBarButtonItem.ImageOptions.LargeImageIndex = 104;
             this.ClienteBarButtonItem.Name = "ClienteBarButtonItem";
             this.ClienteBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ClienteBarButtonItem_ItemClick);
             // 
+            // ProveedoresBarButtonItem
+            // 
+            this.ProveedoresBarButtonItem.Caption = "Proveedores";
+            this.ProveedoresBarButtonItem.Id = 2;
+            this.ProveedoresBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ProveedoresBarButtonItem.ImageOptions.Image")));
+            this.ProveedoresBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ProveedoresBarButtonItem.ImageOptions.LargeImage")));
+            this.ProveedoresBarButtonItem.Name = "ProveedoresBarButtonItem";
+            this.ProveedoresBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProveedoresBarButtonItem_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.InicioRibbonPageGroup,
-            this.ribbonPageGroup1});
+            this.InicioRibbonPageGroup});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Inicio";
             // 
             // InicioRibbonPageGroup
             // 
             this.InicioRibbonPageGroup.ItemLinks.Add(this.ClienteBarButtonItem);
+            this.InicioRibbonPageGroup.ItemLinks.Add(this.ProveedoresBarButtonItem);
+            this.InicioRibbonPageGroup.ItemLinks.Add(this.ProductoBarButtonItem);
             this.InicioRibbonPageGroup.Name = "InicioRibbonPageGroup";
             this.InicioRibbonPageGroup.Text = "Inicio";
             // 
@@ -262,17 +275,16 @@
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "ribbonPage4";
             // 
-            // ribbonPageGroup1
+            // ProductoBarButtonItem
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.ProductoBarButtonItem.Caption = "Producto";
+            this.ProductoBarButtonItem.Id = 3;
+            this.ProductoBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("MarcaBarButtonItem.ImageOptions.Image")));
+            this.ProductoBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("MarcaBarButtonItem.ImageOptions.LargeImage")));
+            this.ProductoBarButtonItem.MergeType = DevExpress.XtraBars.BarMenuMerge.Replace;
+            this.ProductoBarButtonItem.Name = "ProductoBarButtonItem";
+            this.ProductoBarButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            this.ProductoBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProductoBarButtonItem_ItemClick);
             // 
             // Principal
             // 
@@ -286,6 +298,7 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection.ImageSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection)).EndInit();
@@ -303,7 +316,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.BarButtonItem ClienteBarButtonItem;
         private DevExpress.Utils.SharedImageCollection IconosSharedImageCollection;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem ProveedoresBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem ProductoBarButtonItem;
     }
 }

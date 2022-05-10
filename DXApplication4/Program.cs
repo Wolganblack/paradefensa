@@ -29,7 +29,7 @@ namespace SistemaLibreria.UIUI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SistemaLibreria.UI.Clientes());
+            Application.Run(new SistemaLibreria.UI.Principal());
         } 
     }
 }

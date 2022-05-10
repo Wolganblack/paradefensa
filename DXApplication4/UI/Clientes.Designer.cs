@@ -32,14 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NuevoClienteBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.AccionesRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.EditarBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.EliminarBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.ImprimiroExportarBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.ExportarBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.InicioRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemResourcesComboBox1 = new DevExpress.XtraScheduler.UI.RepositoryItemResourcesComboBox();
             this.Departamento = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.ClientesGridControl = new DevExpress.XtraGrid.GridControl();
+            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClienteXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ClientesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -67,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesGridView)).BeginInit();
@@ -85,12 +92,17 @@
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.NuevoClienteBarButtonItem});
+            this.NuevoClienteBarButtonItem,
+            this.barButtonItem1,
+            this.EditarBarButtonItem,
+            this.EliminarBarButtonItem,
+            this.ImprimiroExportarBarButtonItem,
+            this.ExportarBarButtonItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 2;
+            this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.InicioRibbonPage});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1,
             this.repositoryItemResourcesComboBox1,
@@ -106,19 +118,66 @@
             this.NuevoClienteBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("NuevoClienteBarButtonItem.ImageOptions.Image")));
             this.NuevoClienteBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("NuevoClienteBarButtonItem.ImageOptions.LargeImage")));
             this.NuevoClienteBarButtonItem.Name = "NuevoClienteBarButtonItem";
+            this.NuevoClienteBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.NuevoClienteBarButtonItem_ItemClick);
             // 
-            // ribbonPage1
+            // barButtonItem1
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.AccionesRibbonPageGroup});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Acciones";
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // AccionesRibbonPageGroup
+            // EditarBarButtonItem
             // 
-            this.AccionesRibbonPageGroup.ItemLinks.Add(this.NuevoClienteBarButtonItem);
-            this.AccionesRibbonPageGroup.Name = "AccionesRibbonPageGroup";
-            this.AccionesRibbonPageGroup.Text = "Acciones";
+            this.EditarBarButtonItem.Caption = "Editar";
+            this.EditarBarButtonItem.Id = 4;
+            this.EditarBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("EditarBarButtonItem.ImageOptions.Image")));
+            this.EditarBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("EditarBarButtonItem.ImageOptions.LargeImage")));
+            this.EditarBarButtonItem.Name = "EditarBarButtonItem";
+            this.EditarBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditarBarButtonItem_ItemClick);
+            // 
+            // EliminarBarButtonItem
+            // 
+            this.EliminarBarButtonItem.Caption = "Eliminar";
+            this.EliminarBarButtonItem.Id = 5;
+            this.EliminarBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("EliminarBarButtonItem.ImageOptions.Image")));
+            this.EliminarBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("EliminarBarButtonItem.ImageOptions.LargeImage")));
+            this.EliminarBarButtonItem.Name = "EliminarBarButtonItem";
+            this.EliminarBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EliminarBarButtonItem_ItemClick);
+            // 
+            // ImprimiroExportarBarButtonItem
+            // 
+            this.ImprimiroExportarBarButtonItem.Caption = "Imprimir o Exportar";
+            this.ImprimiroExportarBarButtonItem.Id = 6;
+            this.ImprimiroExportarBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ImprimiroExportarBarButtonItem.ImageOptions.Image")));
+            this.ImprimiroExportarBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ImprimiroExportarBarButtonItem.ImageOptions.LargeImage")));
+            this.ImprimiroExportarBarButtonItem.Name = "ImprimiroExportarBarButtonItem";
+            this.ImprimiroExportarBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ImprimiroExportarBarButtonItem_ItemClick);
+            // 
+            // ExportarBarButtonItem
+            // 
+            this.ExportarBarButtonItem.Caption = "Exportar a EXCEL";
+            this.ExportarBarButtonItem.Id = 7;
+            this.ExportarBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportarBarButtonItem.ImageOptions.Image")));
+            this.ExportarBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportarBarButtonItem.ImageOptions.LargeImage")));
+            this.ExportarBarButtonItem.Name = "ExportarBarButtonItem";
+            this.ExportarBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ExportarBarButtonItem_ItemClick);
+            // 
+            // InicioRibbonPage
+            // 
+            this.InicioRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.InicioRibbonPage.Name = "InicioRibbonPage";
+            this.InicioRibbonPage.Text = "Inicio";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.NuevoClienteBarButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.EditarBarButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.EliminarBarButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.ImprimiroExportarBarButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.ExportarBarButtonItem);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Acciones";
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -162,7 +221,7 @@
             // 
             // ClientesGridControl
             // 
-            this.ClientesGridControl.DataSource = this.ClienteXpCollection;
+            this.ClientesGridControl.DataSource = this.ClientesBindingSource;
             this.ClientesGridControl.Location = new System.Drawing.Point(12, 12);
             this.ClientesGridControl.MainView = this.ClientesGridView;
             this.ClientesGridControl.MenuManager = this.ribbon;
@@ -175,6 +234,10 @@
             this.ClientesGridControl.TabIndex = 4;
             this.ClientesGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ClientesGridView});
+            // 
+            // ClientesBindingSource
+            // 
+            this.ClientesBindingSource.DataSource = this.ClienteXpCollection;
             // 
             // ClienteXpCollection
             // 
@@ -351,6 +414,7 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemResourcesComboBox1)).EndInit();
@@ -358,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClientesGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesGridView)).EndInit();
@@ -377,8 +442,6 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup AccionesRibbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem NuevoClienteBarButtonItem;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -406,5 +469,13 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit DepartamentoRepositoryItemLookUpEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit TelefonoItemLookUpEdit;
         private DevExpress.Xpo.XPCollection TelefonoXpCollection;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem EditarBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem EliminarBarButtonItem;
+        private DevExpress.XtraBars.Ribbon.RibbonPage InicioRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private System.Windows.Forms.BindingSource ClientesBindingSource;
+        private DevExpress.XtraBars.BarButtonItem ImprimiroExportarBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem ExportarBarButtonItem;
     }
 }

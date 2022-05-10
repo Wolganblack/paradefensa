@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using SistemaLibreria.UI.Proveedor;
+using SistemaLibreria.UI.Producto;
 
 namespace SistemaLibreria.UI
 {
@@ -23,6 +25,30 @@ namespace SistemaLibreria.UI
             Clientes formularioClientes = new Clientes();
             formularioClientes.MdiParent = this;
             formularioClientes.Visible = true;
+        }
+
+        protected void ProveedoresBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ListaProveedores formularioProveedores = new ListaProveedores();
+            formularioProveedores.MdiParent = this;
+            formularioProveedores.Visible = true;
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductoBarButtonItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ListaProducto formulariolistaProducto = new ListaProducto();
+            formulariolistaProducto.MdiParent = this;
+            formulariolistaProducto.Visible = true;
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
