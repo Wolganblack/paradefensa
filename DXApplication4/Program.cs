@@ -8,6 +8,7 @@ using DevExpress.LookAndFeel;
 using DevExpress.Xpo;
 using SistemaLibreria;
 using ModeloDatos.ORM;
+using MySql.Data;
 using SistemaLibreria.UIUI;
 
 

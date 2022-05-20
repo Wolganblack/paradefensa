@@ -31,10 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaProveedores));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.GridControlProveedores = new DevExpress.XtraGrid.GridControl();
             this.ListarProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProveedorXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.ProveedoresGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCedula = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDireccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRepresentate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NuevoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.EliminarBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -45,25 +54,16 @@
             this.Inicio = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.GridControlProveedores = new DevExpress.XtraGrid.GridControl();
-            this.ProveedoresGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCedula = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDireccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRepresentate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListarProveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -76,6 +76,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(762, 310);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // GridControlProveedores
+            // 
+            this.GridControlProveedores.DataSource = this.ListarProveedoresBindingSource;
+            this.GridControlProveedores.Location = new System.Drawing.Point(12, 12);
+            this.GridControlProveedores.MainView = this.ProveedoresGridView;
+            this.GridControlProveedores.Name = "GridControlProveedores";
+            this.GridControlProveedores.Size = new System.Drawing.Size(738, 286);
+            this.GridControlProveedores.TabIndex = 7;
+            this.GridControlProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ProveedoresGridView});
             // 
             // ListarProveedoresBindingSource
             // 
@@ -91,6 +102,62 @@
             this.UnitOfWork.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UnitOfWork.TrackPropertiesModifications = false;
             // 
+            // ProveedoresGridView
+            // 
+            this.ProveedoresGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colCedula,
+            this.colNombre,
+            this.colDireccion,
+            this.colRepresentate,
+            this.colEmail});
+            this.ProveedoresGridView.GridControl = this.GridControlProveedores;
+            this.ProveedoresGridView.Name = "ProveedoresGridView";
+            this.ProveedoresGridView.OptionsFind.AlwaysVisible = true;
+            this.ProveedoresGridView.OptionsView.ShowGroupPanel = false;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colCedula
+            // 
+            this.colCedula.FieldName = "Cedula";
+            this.colCedula.Name = "colCedula";
+            this.colCedula.Visible = true;
+            this.colCedula.VisibleIndex = 1;
+            // 
+            // colNombre
+            // 
+            this.colNombre.FieldName = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Visible = true;
+            this.colNombre.VisibleIndex = 2;
+            // 
+            // colDireccion
+            // 
+            this.colDireccion.FieldName = "Direccion";
+            this.colDireccion.Name = "colDireccion";
+            this.colDireccion.Visible = true;
+            this.colDireccion.VisibleIndex = 3;
+            // 
+            // colRepresentate
+            // 
+            this.colRepresentate.FieldName = "Representate";
+            this.colRepresentate.Name = "colRepresentate";
+            this.colRepresentate.Visible = true;
+            this.colRepresentate.VisibleIndex = 4;
+            // 
+            // colEmail
+            // 
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 5;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -100,6 +167,15 @@
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(762, 310);
             this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.GridControlProveedores;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(742, 290);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // ribbonControl1
             // 
@@ -194,82 +270,6 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // GridControlProveedores
-            // 
-            this.GridControlProveedores.DataSource = this.ListarProveedoresBindingSource;
-            this.GridControlProveedores.Location = new System.Drawing.Point(12, 12);
-            this.GridControlProveedores.MainView = this.ProveedoresGridView;
-            this.GridControlProveedores.Name = "GridControlProveedores";
-            this.GridControlProveedores.Size = new System.Drawing.Size(738, 286);
-            this.GridControlProveedores.TabIndex = 7;
-            this.GridControlProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ProveedoresGridView});
-            // 
-            // ProveedoresGridView
-            // 
-            this.ProveedoresGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colCedula,
-            this.colNombre,
-            this.colDireccion,
-            this.colRepresentate,
-            this.colEmail});
-            this.ProveedoresGridView.GridControl = this.GridControlProveedores;
-            this.ProveedoresGridView.Name = "ProveedoresGridView";
-            this.ProveedoresGridView.OptionsFind.AlwaysVisible = true;
-            this.ProveedoresGridView.OptionsView.ShowGroupPanel = false;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            // 
-            // colCedula
-            // 
-            this.colCedula.FieldName = "Cedula";
-            this.colCedula.Name = "colCedula";
-            this.colCedula.Visible = true;
-            this.colCedula.VisibleIndex = 1;
-            // 
-            // colNombre
-            // 
-            this.colNombre.FieldName = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Visible = true;
-            this.colNombre.VisibleIndex = 2;
-            // 
-            // colDireccion
-            // 
-            this.colDireccion.FieldName = "Direccion";
-            this.colDireccion.Name = "colDireccion";
-            this.colDireccion.Visible = true;
-            this.colDireccion.VisibleIndex = 3;
-            // 
-            // colRepresentate
-            // 
-            this.colRepresentate.FieldName = "Representate";
-            this.colRepresentate.Name = "colRepresentate";
-            this.colRepresentate.Visible = true;
-            this.colRepresentate.VisibleIndex = 4;
-            // 
-            // colEmail
-            // 
-            this.colEmail.FieldName = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 5;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.GridControlProveedores;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(742, 290);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // ListaProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -278,6 +278,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaProveedores";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -285,14 +286,14 @@
             this.Load += new System.EventHandler(this.ListaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridControlProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListarProveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

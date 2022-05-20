@@ -34,11 +34,14 @@
             this.IconosSharedImageCollection = new DevExpress.Utils.SharedImageCollection(this.components);
             this.ClienteBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ProveedoresBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.ProductoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.RespaldoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.FacturaBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.InicioRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ProductoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconosSharedImageCollection.ImageSource)).BeginInit();
@@ -52,9 +55,12 @@
             this.ribbon.ExpandCollapseItem,
             this.ClienteBarButtonItem,
             this.ProveedoresBarButtonItem,
-            this.ProductoBarButtonItem});
+            this.ProductoBarButtonItem,
+            this.barButtonItem1,
+            this.RespaldoBarButtonItem,
+            this.FacturaBarButtonItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 1;
+            this.ribbon.MaxItemId = 4;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -248,6 +254,44 @@
             this.ProveedoresBarButtonItem.Name = "ProveedoresBarButtonItem";
             this.ProveedoresBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProveedoresBarButtonItem_ItemClick);
             // 
+            // ProductoBarButtonItem
+            // 
+            this.ProductoBarButtonItem.Caption = "Producto";
+            this.ProductoBarButtonItem.Id = 3;
+            this.ProductoBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ProductoBarButtonItem.ImageOptions.Image")));
+            this.ProductoBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ProductoBarButtonItem.ImageOptions.LargeImage")));
+            this.ProductoBarButtonItem.MergeType = DevExpress.XtraBars.BarMenuMerge.Replace;
+            this.ProductoBarButtonItem.Name = "ProductoBarButtonItem";
+            this.ProductoBarButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            this.ProductoBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProductoBarButtonItem_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Respaldo";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // RespaldoBarButtonItem
+            // 
+            this.RespaldoBarButtonItem.ActAsDropDown = true;
+            this.RespaldoBarButtonItem.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.RespaldoBarButtonItem.Caption = "Respaldo";
+            this.RespaldoBarButtonItem.Id = 2;
+            this.RespaldoBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RespaldoBarButtonItem.ImageOptions.Image")));
+            this.RespaldoBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("RespaldoBarButtonItem.ImageOptions.LargeImage")));
+            this.RespaldoBarButtonItem.Name = "RespaldoBarButtonItem";
+            this.RespaldoBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RespaldoBarButtonItem_ItemClick);
+            // 
+            // FacturaBarButtonItem
+            // 
+            this.FacturaBarButtonItem.Caption = "Factura";
+            this.FacturaBarButtonItem.Id = 3;
+            this.FacturaBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("FacturaBarButtonItem.ImageOptions.Image")));
+            this.FacturaBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("FacturaBarButtonItem.ImageOptions.LargeImage")));
+            this.FacturaBarButtonItem.Name = "FacturaBarButtonItem";
+            this.FacturaBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FacturaBarButtonItem_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -260,8 +304,10 @@
             this.InicioRibbonPageGroup.ItemLinks.Add(this.ClienteBarButtonItem);
             this.InicioRibbonPageGroup.ItemLinks.Add(this.ProveedoresBarButtonItem);
             this.InicioRibbonPageGroup.ItemLinks.Add(this.ProductoBarButtonItem);
+            this.InicioRibbonPageGroup.ItemLinks.Add(this.RespaldoBarButtonItem);
+            this.InicioRibbonPageGroup.ItemLinks.Add(this.FacturaBarButtonItem);
             this.InicioRibbonPageGroup.Name = "InicioRibbonPageGroup";
-            this.InicioRibbonPageGroup.Text = "Inicio";
+            this.InicioRibbonPageGroup.Text = "`";
             // 
             // ribbonStatusBar
             // 
@@ -275,17 +321,6 @@
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "ribbonPage4";
             // 
-            // ProductoBarButtonItem
-            // 
-            this.ProductoBarButtonItem.Caption = "Producto";
-            this.ProductoBarButtonItem.Id = 3;
-            this.ProductoBarButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("MarcaBarButtonItem.ImageOptions.Image")));
-            this.ProductoBarButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("MarcaBarButtonItem.ImageOptions.LargeImage")));
-            this.ProductoBarButtonItem.MergeType = DevExpress.XtraBars.BarMenuMerge.Replace;
-            this.ProductoBarButtonItem.Name = "ProductoBarButtonItem";
-            this.ProductoBarButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
-            this.ProductoBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ProductoBarButtonItem_ItemClick);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -293,6 +328,7 @@
             this.ClientSize = new System.Drawing.Size(1041, 539);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Principal";
             this.Ribbon = this.ribbon;
@@ -318,5 +354,8 @@
         private DevExpress.Utils.SharedImageCollection IconosSharedImageCollection;
         private DevExpress.XtraBars.BarButtonItem ProveedoresBarButtonItem;
         private DevExpress.XtraBars.BarButtonItem ProductoBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem RespaldoBarButtonItem;
+        private DevExpress.XtraBars.BarButtonItem FacturaBarButtonItem;
     }
 }

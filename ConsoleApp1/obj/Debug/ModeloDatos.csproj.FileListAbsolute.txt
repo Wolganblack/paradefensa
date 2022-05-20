@@ -113,3 +113,4 @@ C:\Users\ALFON\source\repos\Proyectofinal\ConsoleApp1\obj\Debug\ModeloDatos.cspr
 C:\Users\ALFON\source\repos\Proyectofinal\ConsoleApp1\obj\Debug\ModeloDatos.csproj.CopyComplete
 C:\Users\ALFON\source\repos\Proyectofinal\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\ALFON\source\repos\Proyectofinal\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\ALFON\source\repos\Proyectofinal\ConsoleApp1\obj\Debug\ModeloDatos.csprojAssemblyReference.cache

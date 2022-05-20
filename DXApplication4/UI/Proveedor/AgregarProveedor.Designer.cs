@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProveedor));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.AgregarProveedorSimpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.CedulaTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ProveedorXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.NombreTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.DireccionTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -49,10 +51,10 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.AgregarProveedorDxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.ProovedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ProveedorXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CedulaTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DireccionTextEdit.Properties)).BeginInit();
@@ -70,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgregarProveedorDxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProovedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -108,6 +109,13 @@
             this.CedulaTextEdit.Size = new System.Drawing.Size(572, 22);
             this.CedulaTextEdit.StyleController = this.dataLayoutControl1;
             this.CedulaTextEdit.TabIndex = 4;
+            // 
+            // ProveedorXpCollection
+            // 
+            this.ProveedorXpCollection.DisplayableProperties = "Id;Cedula;Nombre;Direccion;Representate;Email";
+            this.ProveedorXpCollection.LoadingEnabled = false;
+            this.ProveedorXpCollection.ObjectType = typeof(ModeloDatos.ORM.Proveedor);
+            this.ProveedorXpCollection.Session = this.UnitOfWork;
             // 
             // UnitOfWork
             // 
@@ -250,25 +258,20 @@
             // 
             this.ProovedorBindingSource.DataSource = this.ProveedorXpCollection;
             // 
-            // ProveedorXpCollection
-            // 
-            this.ProveedorXpCollection.DisplayableProperties = "Id;Cedula;Nombre;Direccion;Representate;Email";
-            this.ProveedorXpCollection.LoadingEnabled = false;
-            this.ProveedorXpCollection.ObjectType = typeof(ModeloDatos.ORM.Proveedor);
-            this.ProveedorXpCollection.Session = this.UnitOfWork;
-            // 
             // AgregarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 423);
             this.Controls.Add(this.dataLayoutControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarProveedor";
             this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.Proveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CedulaTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DireccionTextEdit.Properties)).EndInit();
@@ -286,7 +289,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgregarProveedorDxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProovedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProveedorXpCollection)).EndInit();
             this.ResumeLayout(false);
 
         }

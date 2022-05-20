@@ -34,12 +34,15 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregarcliente));
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ClienteDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.Emailclitxt = new DevExpress.XtraEditors.TextEdit();
             this.ClienteBiindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClienteXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.MunicipioSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.XpMunicipioCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Agregarclie1 = new DevExpress.XtraEditors.SimpleButton();
             this.Apellidoclitxt = new DevExpress.XtraEditors.TextEdit();
@@ -52,15 +55,15 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ClienteXpCollection = new DevExpress.Xpo.XPCollection(this.components);
-            this.XpMunicipioCollection = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Emailclitxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBiindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MunicipioSearchLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XpMunicipioCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apellidoclitxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nombreclitxt.Properties)).BeginInit();
@@ -72,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XpMunicipioCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // UnitOfWork
@@ -97,6 +98,12 @@
             // ClienteBiindingSource
             // 
             this.ClienteBiindingSource.DataSource = this.ClienteXpCollection;
+            // 
+            // ClienteXpCollection
+            // 
+            this.ClienteXpCollection.LoadingEnabled = false;
+            this.ClienteXpCollection.ObjectType = typeof(ModeloDatos.ORM.Cliente);
+            this.ClienteXpCollection.Session = this.UnitOfWork;
             // 
             // layoutControl1
             // 
@@ -132,6 +139,11 @@
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.MunicipioSearchLookUpEdit, conditionValidationRule1);
+            // 
+            // XpMunicipioCollection
+            // 
+            this.XpMunicipioCollection.ObjectType = typeof(ModeloDatos.ORM.Municipio);
+            this.XpMunicipioCollection.Session = this.UnitOfWork;
             // 
             // searchLookUpEdit1View
             // 
@@ -261,17 +273,6 @@
             this.layoutControlItem4.Text = "Apellido";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(53, 16);
             // 
-            // ClienteXpCollection
-            // 
-            this.ClienteXpCollection.LoadingEnabled = false;
-            this.ClienteXpCollection.ObjectType = typeof(ModeloDatos.ORM.Cliente);
-            this.ClienteXpCollection.Session = this.UnitOfWork;
-            // 
-            // XpMunicipioCollection
-            // 
-            this.XpMunicipioCollection.ObjectType = typeof(ModeloDatos.ORM.Municipio);
-            this.XpMunicipioCollection.Session = this.UnitOfWork;
-            // 
             // Agregarcliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -279,6 +280,7 @@
             this.ClientSize = new System.Drawing.Size(598, 204);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Agregarcliente";
@@ -288,9 +290,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Emailclitxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBiindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MunicipioSearchLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XpMunicipioCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apellidoclitxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nombreclitxt.Properties)).EndInit();
@@ -302,8 +306,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XpMunicipioCollection)).EndInit();
             this.ResumeLayout(false);
 
         }

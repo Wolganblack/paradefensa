@@ -71,5 +71,10 @@ namespace SistemaLibreria.UI.Producto
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
