@@ -35,7 +35,6 @@
             this.MarcaLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.AgregarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.NombreTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.ProductosXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.DescripcionMemoExEdit = new DevExpress.XtraEditors.MemoExEdit();
             this.ColorTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -57,12 +56,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ProductoDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.ProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProductosXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.MarcaxpCollection = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionMemoExEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorTextEdit.Properties)).BeginInit();
@@ -84,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaxpCollection)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,14 +144,6 @@
             this.NombreTextEdit.Size = new System.Drawing.Size(344, 22);
             this.NombreTextEdit.StyleController = this.dataLayoutControl1;
             this.NombreTextEdit.TabIndex = 4;
-            // 
-            // ProductosXpCollection
-            // 
-            this.ProductosXpCollection.DisplayableProperties = "Id;Nombre;Descripcion;Color;Existencias;Costo;PrecioVenta;MarcaId;DetalleFacturas" +
-    "";
-            this.ProductosXpCollection.LoadingEnabled = false;
-            this.ProductosXpCollection.ObjectType = typeof(ModeloDatos.ORM.Producto);
-            this.ProductosXpCollection.Session = this.UnitOfWork;
             // 
             // UnitOfWork
             // 
@@ -349,6 +341,14 @@
             // 
             this.ProductoBindingSource.DataSource = this.ProductosXpCollection;
             // 
+            // ProductosXpCollection
+            // 
+            this.ProductosXpCollection.DisplayableProperties = "Id;Nombre;Descripcion;Color;Existencias;Costo;PrecioVenta;MarcaId;DetalleFacturas" +
+    "";
+            this.ProductosXpCollection.LoadingEnabled = false;
+            this.ProductosXpCollection.ObjectType = typeof(ModeloDatos.ORM.Producto);
+            this.ProductosXpCollection.Session = this.UnitOfWork;
+            // 
             // MarcaxpCollection
             // 
             this.MarcaxpCollection.ObjectType = typeof(ModeloDatos.ORM.Marca);
@@ -368,7 +368,6 @@
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MarcaLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionMemoExEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorTextEdit.Properties)).EndInit();
@@ -390,6 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaxpCollection)).EndInit();
             this.ResumeLayout(false);
 

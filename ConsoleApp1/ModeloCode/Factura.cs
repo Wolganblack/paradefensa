@@ -9,7 +9,10 @@ namespace ModeloDatos.ORM
     public partial class Factura
     {
         public Factura(Session session) : base(session) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
+        public override void AfterConstruction() {
+            base.AfterConstruction();
+            this.Fecha = DateTime.Now;
+        }
 
 
         public bool Validar()

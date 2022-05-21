@@ -40,12 +40,12 @@ namespace ModeloDatos.ORM
             get { return fCantidadPedida; }
             set { SetPropertyValue<int>(nameof(CantidadPedida), ref fCantidadPedida, value); }
         }
-        double fPrecioTotal;
+        decimal fPrecioTotal;
         [Persistent(@"precio_total")]
-        public double PrecioTotal
+        public decimal PrecioTotal
         {
             get { return fPrecioTotal; }
-            set { SetPropertyValue<double>(nameof(PrecioTotal), ref fPrecioTotal, value); }
+            set { SetPropertyValue<decimal>(nameof(PrecioTotal), ref fPrecioTotal, value); }
         }
         Factura fFacturaId;
         [Persistent(@"factura_id")]
