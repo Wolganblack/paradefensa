@@ -81,7 +81,7 @@
             // 
             // ListaFacturaGridControl
             // 
-            this.ListaFacturaGridControl.DataSource = this.ListaFacturaXpCollection;
+            this.ListaFacturaGridControl.DataSource = this.ListaFacturaBindingSource;
             this.ListaFacturaGridControl.Location = new System.Drawing.Point(12, 12);
             this.ListaFacturaGridControl.MainView = this.gridView1;
             this.ListaFacturaGridControl.MenuManager = this.ribbonControl1;
@@ -189,6 +189,7 @@
             this.EditarBarButtonItemB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("EditarBarButtonItemB.ImageOptions.Image")));
             this.EditarBarButtonItemB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("EditarBarButtonItemB.ImageOptions.LargeImage")));
             this.EditarBarButtonItemB.Name = "EditarBarButtonItemB";
+            this.EditarBarButtonItemB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditarBarButtonItemB_ItemClick);
             // 
             // EliminarBarButtonItemB
             // 

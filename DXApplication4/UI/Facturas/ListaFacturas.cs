@@ -64,6 +64,19 @@ namespace SistemaLibreria.UI.Facturas
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void EditarBarButtonItemB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ModelodatosFacturas actual = ListaFacturaBindingSource.Current as ModelodatosFacturas;
+            if (actual == null)
+            {
+                return;
+            }
+            AgregarFacturas form = new AgregarFacturas();
+            form.Id = actual.Id;
+            form.ShowDialog();
+            this.ListaFacturaUnitOfWork.Reload(actual);
+        }
     }
     }
 

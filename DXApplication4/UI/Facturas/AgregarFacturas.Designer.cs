@@ -196,7 +196,8 @@
             this.ModificarSimpleButton.Size = new System.Drawing.Size(225, 38);
             this.ModificarSimpleButton.StyleController = this.layoutControl1;
             this.ModificarSimpleButton.TabIndex = 32;
-            this.ModificarSimpleButton.Text = "Modificar Factura";
+            this.ModificarSimpleButton.Text = "Quitar Producto";
+            this.ModificarSimpleButton.Click += new System.EventHandler(this.ModificarSimpleButton_Click);
             // 
             // ImprimirSimpleButton
             // 
@@ -232,6 +233,7 @@
             // 
             // DetalleFacturaBindingSource
             // 
+            this.DetalleFacturaBindingSource.AllowNew = true;
             this.DetalleFacturaBindingSource.DataMember = "DetalleFacturas";
             this.DetalleFacturaBindingSource.DataSource = this.FacturaXpCollection;
             // 

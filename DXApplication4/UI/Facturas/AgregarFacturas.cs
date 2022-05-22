@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using ModeloDatos.ORM;
+using DevExpress.Data.Filtering;
 
 namespace SistemaLibreria.UI.Facturas
 {
@@ -17,6 +18,12 @@ namespace SistemaLibreria.UI.Facturas
     {
         private Factura factura;
 
+        public int? Id
+        {
+            get;
+
+            set;
+        }
         public AgregarFacturas()
         {
             InitializeComponent();
@@ -39,7 +46,23 @@ namespace SistemaLibreria.UI.Facturas
 
         private void AgregarFacturas_Load(object sender, EventArgs e)
         {
-            this.factura = this.FacturaBindingSource.AddNew() as Factura;
+            
+            if (this.Id != null)
+            {
+                var criteria = CriteriaOperator.Parse(string.Format("{0} = {1}", nameof(Cliente.Id), this.Id));
+                this.FacturaXpCollection.Criteria = criteria;
+                this.FacturaXpCollection.LoadingEnabled = true;
+                this.FacturaXpCollection.Load();
+                this.factura = this.FacturaBindingSource.Current as Factura;
+            }
+            else
+            {
+                this.factura = this.FacturaBindingSource.AddNew() as Factura;
+            }
+            if (this.factura != null)
+            {
+                this.DetalleFacturaBindingSource.DataSource = this.factura.DetalleFacturas;
+            }
         }
 
         private void AñadirVentaSimpleButton_Click(object sender, EventArgs e)
@@ -90,6 +113,19 @@ namespace SistemaLibreria.UI.Facturas
 
         private void ProductoSearchLookUpEdit_Properties_EditValueChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void ModificarSimpleButton_Click(object sender, EventArgs e)
+        {
+            var detalle = this.DetalleFacturaBindingSource.Current as ModeloDatos.ORM.DetalleFactura;
+            if(detalle==null)
+            {
+                return;
+            }
+            detalle.Delete();
+            this.DetalleFacturaBindingSource.Remove(detalle);
+            this.DetalleFacturaGridView.RefreshData();
 
         }
     }
