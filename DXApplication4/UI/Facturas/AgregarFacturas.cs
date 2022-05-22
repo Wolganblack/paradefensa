@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using ModeloDatos.ORM;
 using DevExpress.Data.Filtering;
+using ReporteFactura = SistemaLibreria.UI.Reportes.Factura;
+using DevExpress.XtraReports.UI;
 
 namespace SistemaLibreria.UI.Facturas
 {
@@ -41,7 +43,14 @@ namespace SistemaLibreria.UI.Facturas
 
         private void ImprimirSimpleButton_Click(object sender, EventArgs e)
         {
-           
+            if(this.factura == null)
+            {
+                return;
+            }
+            ReporteFactura reporteFactura = new ReporteFactura();
+            reporteFactura.Parameters["FacturaID"].Value = this.factura.Id;
+            ReportPrintTool printTool = new ReportPrintTool(reporteFactura);
+            printTool.ShowRibbonPreview();
         }
 
         private void AgregarFacturas_Load(object sender, EventArgs e)

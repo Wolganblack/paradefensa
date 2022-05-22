@@ -208,6 +208,7 @@
             this.ImprimirSimpleButton.StyleController = this.layoutControl1;
             this.ImprimirSimpleButton.TabIndex = 31;
             this.ImprimirSimpleButton.Text = "ImprimirFactura";
+            this.ImprimirSimpleButton.Click += new System.EventHandler(this.ImprimirSimpleButton_Click);
             // 
             // AñadirVentaSimpleButton
             // 
