@@ -137,6 +137,8 @@ namespace SistemaLibreria.UI.Facturas
             this.DetalleFacturaGridView.RefreshData();
 
         }
+
+      
     }
         /*  public void ShowGridPreview(GridControl grid)
 {

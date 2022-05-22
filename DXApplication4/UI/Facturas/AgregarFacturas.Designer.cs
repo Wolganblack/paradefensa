@@ -78,6 +78,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgregarFacDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.ColPrecioVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadTextEdit.Properties)).BeginInit();
@@ -245,6 +246,7 @@
             this.gridColumn3,
             this.colDescripcion,
             this.colCantidadPedida,
+            this.ColPrecioVenta,
             this.colPrecioTotal,
             this.gridColumn1,
             this.gridColumn2,
@@ -282,10 +284,10 @@
             // 
             // colPrecioTotal
             // 
-            this.colPrecioTotal.FieldName = "PrecioTotal";
+            this.colPrecioTotal.FieldName = "Total";
             this.colPrecioTotal.Name = "colPrecioTotal";
             this.colPrecioTotal.Visible = true;
-            this.colPrecioTotal.VisibleIndex = 2;
+            this.colPrecioTotal.VisibleIndex = 3;
             // 
             // gridColumn1
             // 
@@ -336,6 +338,7 @@
             // 
             // TotalTextEdit
             // 
+            this.TotalTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.FacturaBindingSource, "TotalFactura", true));
             this.TotalTextEdit.Location = new System.Drawing.Point(597, 90);
             this.TotalTextEdit.Name = "TotalTextEdit";
             this.TotalTextEdit.Size = new System.Drawing.Size(432, 22);
@@ -535,6 +538,14 @@
             this.layoutControlItem2.Text = "Cantidad";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(92, 16);
             // 
+            // ColPrecioVenta
+            // 
+            this.ColPrecioVenta.Caption = "Precio Venta";
+            this.ColPrecioVenta.FieldName = "ProductoId.PrecioVenta";
+            this.ColPrecioVenta.Name = "ColPrecioVenta";
+            this.ColPrecioVenta.Visible = true;
+            this.ColPrecioVenta.VisibleIndex = 2;
+            // 
             // AgregarFacturas
             // 
             this.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("AgregarFacturas.Appearance.Image")));
@@ -641,5 +652,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider AgregarFacDxValidationProvider;
         private System.Windows.Forms.BindingSource ProductoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn ColPrecioVenta;
     }
 }

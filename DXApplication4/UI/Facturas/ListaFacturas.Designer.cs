@@ -35,12 +35,14 @@
             this.ListaFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ListaFacturaXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.ListaFacturaUnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ListaFacturaGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumero = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.ClienteXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NuevobarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -51,25 +53,23 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RibbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.detalleFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClienteXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaUnitOfWork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -87,7 +87,7 @@
             // 
             this.ListaFacturaGridControl.DataSource = this.ListaFacturaBindingSource;
             this.ListaFacturaGridControl.Location = new System.Drawing.Point(12, 12);
-            this.ListaFacturaGridControl.MainView = this.gridView1;
+            this.ListaFacturaGridControl.MainView = this.ListaFacturaGridView;
             this.ListaFacturaGridControl.MenuManager = this.ribbonControl1;
             this.ListaFacturaGridControl.Name = "ListaFacturaGridControl";
             this.ListaFacturaGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -95,7 +95,7 @@
             this.ListaFacturaGridControl.Size = new System.Drawing.Size(935, 239);
             this.ListaFacturaGridControl.TabIndex = 4;
             this.ListaFacturaGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.ListaFacturaGridView});
             // 
             // ListaFacturaBindingSource
             // 
@@ -111,20 +111,22 @@
             this.ListaFacturaUnitOfWork.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.ListaFacturaUnitOfWork.TrackPropertiesModifications = false;
             // 
-            // gridView1
+            // ListaFacturaGridView
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ListaFacturaGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colNumero,
             this.colFecha,
             this.colTotal,
             this.gridColumn1,
             this.gridColumn2});
-            this.gridView1.GridControl = this.ListaFacturaGridControl;
-            this.gridView1.Name = "gridView1";
+            this.ListaFacturaGridView.GridControl = this.ListaFacturaGridControl;
+            this.ListaFacturaGridView.Name = "ListaFacturaGridView";
+            this.ListaFacturaGridView.OptionsFind.AlwaysVisible = true;
             // 
             // colId
             // 
+            this.colId.Caption = "Numero";
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.Visible = true;
@@ -134,30 +136,46 @@
             // 
             this.colNumero.FieldName = "Numero";
             this.colNumero.Name = "colNumero";
-            this.colNumero.Visible = true;
-            this.colNumero.VisibleIndex = 2;
             // 
             // colFecha
             // 
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 3;
+            this.colFecha.VisibleIndex = 2;
             // 
             // colTotal
             // 
-            this.colTotal.FieldName = "Total";
+            this.colTotal.FieldName = "TotalFactura";
             this.colTotal.Name = "colTotal";
             this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 4;
+            this.colTotal.VisibleIndex = 3;
             // 
             // gridColumn1
             // 
+            this.gridColumn1.Caption = "Cliente";
             this.gridColumn1.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.gridColumn1.FieldName = "ClienteId.Id";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_apellido", "Nombre_apellido", 119, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.repositoryItemLookUpEdit1.DataSource = this.ClienteXpCollection;
+            this.repositoryItemLookUpEdit1.DisplayMember = "Nombre_apellido";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.ValueMember = "Id";
+            // 
+            // ClienteXpCollection
+            // 
+            this.ClienteXpCollection.ObjectType = typeof(ModeloDatos.ORM.Cliente);
+            this.ClienteXpCollection.Session = this.ListaFacturaUnitOfWork;
             // 
             // gridColumn2
             // 
@@ -250,18 +268,6 @@
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(959, 37);
             // 
-            // repositoryItemLookUpEdit1
-            // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_apellido", "Nombre_apellido", 119, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.repositoryItemLookUpEdit1.DataSource = this.ClienteXpCollection;
-            this.repositoryItemLookUpEdit1.DisplayMember = "Nombre_apellido";
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            this.repositoryItemLookUpEdit1.ValueMember = "Id";
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -291,11 +297,6 @@
             this.detalleFacturasBindingSource.DataMember = "DetalleFacturas";
             this.detalleFacturasBindingSource.DataSource = this.ListaFacturaBindingSource;
             // 
-            // ClienteXpCollection
-            // 
-            this.ClienteXpCollection.ObjectType = typeof(ModeloDatos.ORM.Cliente);
-            this.ClienteXpCollection.Session = this.ListaFacturaUnitOfWork;
-            // 
             // ListaFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -316,13 +317,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaUnitOfWork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFacturaGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteXpCollection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,7 +342,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraGrid.GridControl ListaFacturaGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView ListaFacturaGridView;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colNumero;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha;

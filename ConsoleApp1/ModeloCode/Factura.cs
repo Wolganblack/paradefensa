@@ -29,6 +29,22 @@ namespace ModeloDatos.ORM
 
             return true;
         }
+
+        public decimal TotalFactura
+        {
+            get
+            {
+
+                decimal suma = 0;
+                foreach (var detalleFactura in DetalleFacturas)
+                {
+                    suma += detalleFactura.Total;
+                }
+                return suma;
+            }
+           
+        }
+
     }
 
 }

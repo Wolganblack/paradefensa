@@ -10,6 +10,15 @@ namespace ModeloDatos.ORM
     {
         public DetalleFactura(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        public decimal Total
+        {
+            get
+            {
+                return CantidadPedida * this.ProductoId.PrecioVenta;
+            }
+        }
+
     }
 
 }
