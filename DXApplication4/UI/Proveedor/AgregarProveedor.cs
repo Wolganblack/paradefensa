@@ -31,7 +31,6 @@ namespace DXApplication4.UI.Provedor
             if (!this.AgregarProveedorDxValidationProvider1.Validate())
             {
                 return;
-
             }
             this.ProovedorBindingSource.EndEdit();
             UnitOfWork.CommitChanges();

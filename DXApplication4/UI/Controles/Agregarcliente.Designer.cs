@@ -90,7 +90,7 @@
             this.Emailclitxt.Size = new System.Drawing.Size(518, 22);
             this.Emailclitxt.StyleController = this.layoutControl1;
             this.Emailclitxt.TabIndex = 16;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Emailclitxt, conditionValidationRule5);
             this.Emailclitxt.EditValueChanged += new System.EventHandler(this.Emailclitxt_EditValueChanged_1);
@@ -137,7 +137,7 @@
             this.MunicipioSearchLookUpEdit.Size = new System.Drawing.Size(518, 22);
             this.MunicipioSearchLookUpEdit.StyleController = this.layoutControl1;
             this.MunicipioSearchLookUpEdit.TabIndex = 18;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.MunicipioSearchLookUpEdit, conditionValidationRule1);
             this.MunicipioSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.MunicipioSearchLookUpEdit_EditValueChanged);
@@ -174,7 +174,7 @@
             this.Apellidoclitxt.Size = new System.Drawing.Size(518, 22);
             this.Apellidoclitxt.StyleController = this.layoutControl1;
             this.Apellidoclitxt.TabIndex = 14;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Apellidoclitxt, conditionValidationRule2);
             // 
@@ -186,7 +186,7 @@
             this.Nombreclitxt.Size = new System.Drawing.Size(518, 22);
             this.Nombreclitxt.StyleController = this.layoutControl1;
             this.Nombreclitxt.TabIndex = 13;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             conditionValidationRule3.Value2 = "";
             this.ClienteDxValidationProvider.SetValidationRule(this.Nombreclitxt, conditionValidationRule3);
@@ -202,7 +202,7 @@
             this.Cedulatcli.Size = new System.Drawing.Size(518, 22);
             this.Cedulatcli.StyleController = this.layoutControl1;
             this.Cedulatcli.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Cedulatcli, conditionValidationRule4);
             this.Cedulatcli.EditValueChanged += new System.EventHandler(this.Cedulatcli_EditValueChanged);

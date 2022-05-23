@@ -155,7 +155,13 @@
             this.CantidadTextEdit.Size = new System.Drawing.Size(391, 22);
             this.CantidadTextEdit.StyleController = this.layoutControl1;
             this.CantidadTextEdit.TabIndex = 35;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.AgregarFacDxValidationProvider.SetValidationRule(this.CantidadTextEdit, conditionValidationRule1);
             // 
             // FechaDateEdit
@@ -171,6 +177,7 @@
             this.FechaDateEdit.Size = new System.Drawing.Size(189, 22);
             this.FechaDateEdit.StyleController = this.layoutControl1;
             this.FechaDateEdit.TabIndex = 34;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
             conditionValidationRule2.Value1 = "<Null>";
             this.AgregarFacDxValidationProvider.SetValidationRule(this.FechaDateEdit, conditionValidationRule2);
@@ -338,6 +345,7 @@
             this.ProductoSearchLookUpEdit.Size = new System.Drawing.Size(391, 22);
             this.ProductoSearchLookUpEdit.StyleController = this.layoutControl1;
             this.ProductoSearchLookUpEdit.TabIndex = 26;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.AgregarFacDxValidationProvider.SetValidationRule(this.ProductoSearchLookUpEdit, conditionValidationRule3);
             this.ProductoSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.ProductoSearchLookUpEdit_EditValueChanged);
@@ -395,6 +403,7 @@
             this.ClienteSearchLookUpEdit.Size = new System.Drawing.Size(391, 22);
             this.ClienteSearchLookUpEdit.StyleController = this.layoutControl1;
             this.ClienteSearchLookUpEdit.TabIndex = 5;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "This value is not valid";
             this.AgregarFacDxValidationProvider.SetValidationRule(this.ClienteSearchLookUpEdit, conditionValidationRule6);
             // 
