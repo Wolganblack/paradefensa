@@ -99,7 +99,7 @@
             this.ImprimiroExportarBarButtonItem,
             this.ExportarBarButtonItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 8;
+            this.ribbon.MaxItemId = 1;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.InicioRibbonPage});

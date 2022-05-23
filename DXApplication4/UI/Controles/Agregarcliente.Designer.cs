@@ -93,6 +93,7 @@
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Emailclitxt, conditionValidationRule5);
+            this.Emailclitxt.EditValueChanged += new System.EventHandler(this.Emailclitxt_EditValueChanged_1);
             this.Emailclitxt.Validating += new System.ComponentModel.CancelEventHandler(this.Emailclitxt_Validating);
             // 
             // ClienteBiindingSource
@@ -139,6 +140,7 @@
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.MunicipioSearchLookUpEdit, conditionValidationRule1);
+            this.MunicipioSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.MunicipioSearchLookUpEdit_EditValueChanged);
             // 
             // XpMunicipioCollection
             // 
@@ -203,6 +205,7 @@
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Cedulatcli, conditionValidationRule4);
+            this.Cedulatcli.EditValueChanged += new System.EventHandler(this.Cedulatcli_EditValueChanged);
             // 
             // layoutControlGroup1
             // 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.Data.Filtering;
+using System.Net.Mail;
 
 namespace DXApplication4.UI.Provedor
 {
@@ -24,6 +25,38 @@ namespace DXApplication4.UI.Provedor
         public AgregarProveedor()
         {
             InitializeComponent();
+        }
+        private void AgregarProveedorSimpleButton1_Click(object sender, EventArgs e)
+        {
+            if (!this.AgregarProveedorDxValidationProvider1.Validate())
+            {
+                return;
+
+            }
+            this.ProovedorBindingSource.EndEdit();
+            UnitOfWork.CommitChanges();
+            this.Close();
+        }
+
+        private void CedulaTextEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode.Equals(Keys.Enter))
+                NombreTextEdit.Focus();
+        }
+        private void EmailTextEdit_EditValueChanged(object sender, CancelEventArgs e)
+        {
+            try
+            {
+
+                TextEdit textEdit = (TextEdit)sender;
+                string emailAddress = textEdit.EditValue.ToString();
+                MailAddress m = new MailAddress(emailAddress);
+            }
+            catch (FormatException)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void Proveedor_Load(object sender, EventArgs e)
@@ -41,19 +74,12 @@ namespace DXApplication4.UI.Provedor
             }
         }
 
-        private void AgregarProveedorSimpleButton1_Click(object sender, EventArgs e)
+       
+
+        private void CedulaTextEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (!this.AgregarProveedorDxValidationProvider1.Validate())
-            {
-                return;
 
-            }
-            this.ProovedorBindingSource.EndEdit();
-            UnitOfWork.CommitChanges();
-            this.Close();
         }
-
-
     }
 }
 

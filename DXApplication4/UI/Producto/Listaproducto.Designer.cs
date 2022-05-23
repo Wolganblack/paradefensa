@@ -47,6 +47,7 @@
             this.MarcaXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ListaProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NuevoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +58,6 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ListaProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlProducto)).BeginInit();
@@ -68,8 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MarcaXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -79,19 +79,19 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 178);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(829, 180);
+            this.layoutControl1.Size = new System.Drawing.Size(1007, 358);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // GridControlProducto
             // 
-            this.GridControlProducto.DataSource = this.ListaProductoxpCollection;
+            this.GridControlProducto.DataSource = this.ListaProductoBindingSource1;
             this.GridControlProducto.Location = new System.Drawing.Point(12, 12);
             this.GridControlProducto.MainView = this.gridView1;
             this.GridControlProducto.Name = "GridControlProducto";
             this.GridControlProducto.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.MarcaRepositoryItemLookUpEdit});
-            this.GridControlProducto.Size = new System.Drawing.Size(805, 156);
+            this.GridControlProducto.Size = new System.Drawing.Size(983, 334);
             this.GridControlProducto.TabIndex = 4;
             this.GridControlProducto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -119,6 +119,7 @@
             this.gridColumn1});
             this.gridView1.GridControl = this.GridControlProducto;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             // 
             // colId
             // 
@@ -200,7 +201,7 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(829, 180);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1007, 358);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -208,16 +209,20 @@
             this.layoutControlItem1.Control = this.GridControlProducto;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(809, 160);
+            this.layoutControlItem1.Size = new System.Drawing.Size(987, 338);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // ListaProductoBindingSource1
+            // 
+            this.ListaProductoBindingSource1.DataSource = this.ListaProductoxpCollection;
+            // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 358);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 536);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(829, 37);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1007, 37);
             // 
             // ribbonControl1
             // 
@@ -234,7 +239,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(829, 178);
+            this.ribbonControl1.Size = new System.Drawing.Size(1007, 178);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -305,15 +310,11 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // ListaProductoBindingSource1
-            // 
-            this.ListaProductoBindingSource1.DataSource = this.ListaProductoxpCollection;
-            // 
             // ListaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 395);
+            this.ClientSize = new System.Drawing.Size(1007, 573);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -332,8 +333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MarcaXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

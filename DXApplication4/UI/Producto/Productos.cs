@@ -54,6 +54,11 @@ namespace SistemaLibreria.UI.Producto
                 this.ProductoBindingSource.AddNew();
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     }
 

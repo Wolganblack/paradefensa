@@ -29,12 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.MarcaLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.AgregarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.NombreTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ProductosXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.DescripcionMemoExEdit = new DevExpress.XtraEditors.MemoExEdit();
             this.ColorTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -56,12 +63,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ProductoDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.ProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ProductosXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.MarcaxpCollection = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionMemoExEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorTextEdit.Properties)).BeginInit();
@@ -83,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaxpCollection)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +121,7 @@
             this.simpleButton1.StyleController = this.dataLayoutControl1;
             this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Cancelar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // MarcaLookUpEdit
             // 
@@ -144,6 +151,17 @@
             this.NombreTextEdit.Size = new System.Drawing.Size(344, 22);
             this.NombreTextEdit.StyleController = this.dataLayoutControl1;
             this.NombreTextEdit.TabIndex = 4;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.ProductoDxValidationProvider.SetValidationRule(this.NombreTextEdit, conditionValidationRule1);
+            // 
+            // ProductosXpCollection
+            // 
+            this.ProductosXpCollection.DisplayableProperties = "Id;Nombre;Descripcion;Color;Existencias;Costo;PrecioVenta;MarcaId;DetalleFacturas" +
+    "";
+            this.ProductosXpCollection.LoadingEnabled = false;
+            this.ProductosXpCollection.ObjectType = typeof(ModeloDatos.ORM.Producto);
+            this.ProductosXpCollection.Session = this.UnitOfWork;
             // 
             // UnitOfWork
             // 
@@ -160,6 +178,9 @@
             this.DescripcionMemoExEdit.Size = new System.Drawing.Size(354, 22);
             this.DescripcionMemoExEdit.StyleController = this.dataLayoutControl1;
             this.DescripcionMemoExEdit.TabIndex = 5;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.ProductoDxValidationProvider.SetValidationRule(this.DescripcionMemoExEdit, conditionValidationRule2);
             // 
             // ColorTextEdit
             // 
@@ -169,6 +190,9 @@
             this.ColorTextEdit.Size = new System.Drawing.Size(344, 22);
             this.ColorTextEdit.StyleController = this.dataLayoutControl1;
             this.ColorTextEdit.TabIndex = 6;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.ProductoDxValidationProvider.SetValidationRule(this.ColorTextEdit, conditionValidationRule3);
             // 
             // ExistenciasTextEdit
             // 
@@ -183,6 +207,8 @@
             this.ExistenciasTextEdit.Size = new System.Drawing.Size(354, 22);
             this.ExistenciasTextEdit.StyleController = this.dataLayoutControl1;
             this.ExistenciasTextEdit.TabIndex = 7;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.ProductoDxValidationProvider.SetValidationRule(this.ExistenciasTextEdit, conditionValidationRule4);
             // 
             // CostoTextEdit
             // 
@@ -197,6 +223,14 @@
             this.CostoTextEdit.Size = new System.Drawing.Size(344, 22);
             this.CostoTextEdit.StyleController = this.dataLayoutControl1;
             this.CostoTextEdit.TabIndex = 8;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ProductoDxValidationProvider.SetValidationRule(this.CostoTextEdit, conditionValidationRule5);
             // 
             // PrecioVentaTextEdit
             // 
@@ -211,6 +245,14 @@
             this.PrecioVentaTextEdit.Size = new System.Drawing.Size(354, 22);
             this.PrecioVentaTextEdit.StyleController = this.dataLayoutControl1;
             this.PrecioVentaTextEdit.TabIndex = 9;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            conditionValidationRule6.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ProductoDxValidationProvider.SetValidationRule(this.PrecioVentaTextEdit, conditionValidationRule6);
             // 
             // layoutControlGroup1
             // 
@@ -341,14 +383,6 @@
             // 
             this.ProductoBindingSource.DataSource = this.ProductosXpCollection;
             // 
-            // ProductosXpCollection
-            // 
-            this.ProductosXpCollection.DisplayableProperties = "Id;Nombre;Descripcion;Color;Existencias;Costo;PrecioVenta;MarcaId;DetalleFacturas" +
-    "";
-            this.ProductosXpCollection.LoadingEnabled = false;
-            this.ProductosXpCollection.ObjectType = typeof(ModeloDatos.ORM.Producto);
-            this.ProductosXpCollection.Session = this.UnitOfWork;
-            // 
             // MarcaxpCollection
             // 
             this.MarcaxpCollection.ObjectType = typeof(ModeloDatos.ORM.Marca);
@@ -368,6 +402,7 @@
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MarcaLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescripcionMemoExEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorTextEdit.Properties)).EndInit();
@@ -389,7 +424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductosXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaxpCollection)).EndInit();
             this.ResumeLayout(false);
 

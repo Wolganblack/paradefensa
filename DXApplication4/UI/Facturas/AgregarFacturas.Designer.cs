@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarFacturas));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.CantidadTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.FechaDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -47,6 +54,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidadPedida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColPrecioVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecioTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,7 +86,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgregarFacDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.ColPrecioVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadTextEdit.Properties)).BeginInit();
@@ -148,6 +155,8 @@
             this.CantidadTextEdit.Size = new System.Drawing.Size(391, 22);
             this.CantidadTextEdit.StyleController = this.layoutControl1;
             this.CantidadTextEdit.TabIndex = 35;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.CantidadTextEdit, conditionValidationRule1);
             // 
             // FechaDateEdit
             // 
@@ -162,6 +171,9 @@
             this.FechaDateEdit.Size = new System.Drawing.Size(189, 22);
             this.FechaDateEdit.StyleController = this.layoutControl1;
             this.FechaDateEdit.TabIndex = 34;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = "<Null>";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.FechaDateEdit, conditionValidationRule2);
             // 
             // FacturaBindingSource
             // 
@@ -282,6 +294,14 @@
             this.colCantidadPedida.Visible = true;
             this.colCantidadPedida.VisibleIndex = 1;
             // 
+            // ColPrecioVenta
+            // 
+            this.ColPrecioVenta.Caption = "Precio Venta";
+            this.ColPrecioVenta.FieldName = "ProductoId.PrecioVenta";
+            this.ColPrecioVenta.Name = "ColPrecioVenta";
+            this.ColPrecioVenta.Visible = true;
+            this.ColPrecioVenta.VisibleIndex = 2;
+            // 
             // colPrecioTotal
             // 
             this.colPrecioTotal.FieldName = "Total";
@@ -318,6 +338,8 @@
             this.ProductoSearchLookUpEdit.Size = new System.Drawing.Size(391, 22);
             this.ProductoSearchLookUpEdit.StyleController = this.layoutControl1;
             this.ProductoSearchLookUpEdit.TabIndex = 26;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.ProductoSearchLookUpEdit, conditionValidationRule3);
             this.ProductoSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.ProductoSearchLookUpEdit_EditValueChanged);
             // 
             // ProductoBindingSource
@@ -344,6 +366,8 @@
             this.TotalTextEdit.Size = new System.Drawing.Size(432, 22);
             this.TotalTextEdit.StyleController = this.layoutControl1;
             this.TotalTextEdit.TabIndex = 20;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.TotalTextEdit, conditionValidationRule4);
             // 
             // StockTextEdit
             // 
@@ -354,6 +378,8 @@
             this.StockTextEdit.Size = new System.Drawing.Size(432, 22);
             this.StockTextEdit.StyleController = this.layoutControl1;
             this.StockTextEdit.TabIndex = 18;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.StockTextEdit, conditionValidationRule5);
             // 
             // ClienteSearchLookUpEdit
             // 
@@ -369,6 +395,8 @@
             this.ClienteSearchLookUpEdit.Size = new System.Drawing.Size(391, 22);
             this.ClienteSearchLookUpEdit.StyleController = this.layoutControl1;
             this.ClienteSearchLookUpEdit.TabIndex = 5;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.ClienteSearchLookUpEdit, conditionValidationRule6);
             // 
             // ClienteXpCollection
             // 
@@ -390,6 +418,8 @@
             this.FacturaTextEdit.Size = new System.Drawing.Size(151, 22);
             this.FacturaTextEdit.StyleController = this.layoutControl1;
             this.FacturaTextEdit.TabIndex = 7;
+            conditionValidationRule7.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.FacturaTextEdit, conditionValidationRule7);
             // 
             // layoutControlGroup1
             // 
@@ -537,14 +567,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(490, 26);
             this.layoutControlItem2.Text = "Cantidad";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(92, 16);
-            // 
-            // ColPrecioVenta
-            // 
-            this.ColPrecioVenta.Caption = "Precio Venta";
-            this.ColPrecioVenta.FieldName = "ProductoId.PrecioVenta";
-            this.ColPrecioVenta.Name = "ColPrecioVenta";
-            this.ColPrecioVenta.Visible = true;
-            this.ColPrecioVenta.VisibleIndex = 2;
             // 
             // AgregarFacturas
             // 

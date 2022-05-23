@@ -104,5 +104,20 @@ namespace SistemaLibreria.UI.Controles
                 this.ClienteBiindingSource.AddNew();
             }
         }
+
+        private void Cedulatcli_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MunicipioSearchLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Emailclitxt_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProveedor));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.AgregarProveedorSimpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -109,6 +114,11 @@
             this.CedulaTextEdit.Size = new System.Drawing.Size(572, 22);
             this.CedulaTextEdit.StyleController = this.dataLayoutControl1;
             this.CedulaTextEdit.TabIndex = 4;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.CedulaTextEdit, conditionValidationRule1);
+            this.CedulaTextEdit.EditValueChanged += new System.EventHandler(this.CedulaTextEdit_EditValueChanged);
+            this.CedulaTextEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaTextEdit_KeyDown);
             // 
             // ProveedorXpCollection
             // 
@@ -130,6 +140,9 @@
             this.NombreTextEdit.Size = new System.Drawing.Size(572, 22);
             this.NombreTextEdit.StyleController = this.dataLayoutControl1;
             this.NombreTextEdit.TabIndex = 5;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.NombreTextEdit, conditionValidationRule2);
             // 
             // DireccionTextEdit
             // 
@@ -139,6 +152,9 @@
             this.DireccionTextEdit.Size = new System.Drawing.Size(572, 22);
             this.DireccionTextEdit.StyleController = this.dataLayoutControl1;
             this.DireccionTextEdit.TabIndex = 6;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.DireccionTextEdit, conditionValidationRule3);
             // 
             // RepresentateTextEdit
             // 
@@ -148,6 +164,9 @@
             this.RepresentateTextEdit.Size = new System.Drawing.Size(572, 22);
             this.RepresentateTextEdit.StyleController = this.dataLayoutControl1;
             this.RepresentateTextEdit.TabIndex = 7;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.RepresentateTextEdit, conditionValidationRule4);
             // 
             // EmailTextEdit
             // 
@@ -157,6 +176,9 @@
             this.EmailTextEdit.Size = new System.Drawing.Size(234, 22);
             this.EmailTextEdit.StyleController = this.dataLayoutControl1;
             this.EmailTextEdit.TabIndex = 8;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.EmailTextEdit, conditionValidationRule5);
             // 
             // layoutControlGroup1
             // 
