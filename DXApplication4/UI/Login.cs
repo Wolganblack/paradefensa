@@ -1,19 +1,13 @@
-﻿using SistemaLibreria.UI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
 using DevExpress.Xpo;
-using ModeloDatos.ORM;
+using MySql.Data.MySqlClient;
 
 namespace SistemaLibreria.UI
 {
     public partial class Login: DevExpress.XtraEditors.XtraForm
     {
+        int TotalIntentos = 0;
         public Login()
         {
             this.InitializeComponent();
@@ -25,5 +19,29 @@ namespace SistemaLibreria.UI
 
         }
 
-      }
+        private void AceptarSimpleButton_Click(object sender, EventArgs e)
+        {
+            TotalIntentos++;
+            String username = UsuarioTextEdit.Text.ToString();
+            String password = ClaveTextEdit.Text.ToString();
+            var conexion = XpoDefault.DataLayer.Connection as MySqlConnection;
+            String query = "SELECT count(id) FROM usuario WHERE (login = ?login) AND (clave = MD5(?clave));";
+
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.Add(new MySqlParameter("login", username));
+            cmd.Parameters.Add(new MySqlParameter("clave", password));
+            var count = int.Parse(cmd.ExecuteScalar().ToString());
+            if (count == 0)
+            {
+                if(TotalIntentos > 3)
+                {
+                    MessageBox.Show(string.Format("Has intenado {0}", TotalIntentos));
+                    Application.Exit();
+                }
+                return;
+            }
+            this.DialogResult = DialogResult.OK;
+
+        }
+    }
 }

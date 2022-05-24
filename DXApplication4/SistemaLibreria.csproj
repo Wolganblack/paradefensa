@@ -137,12 +137,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Controles\LoginControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Controles\LoginControl.Designer.cs">
-      <DependentUpon>LoginControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +202,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Controles\LoginControl.resx">
-      <DependentUpon>LoginControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

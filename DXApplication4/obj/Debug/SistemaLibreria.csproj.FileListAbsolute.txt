@@ -238,7 +238,6 @@ C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibrer
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.UI.Controles.Agregarcliente.resources
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.UI.Login.resources
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.Properties.Resources.resources
-C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.UI.LoginControl.resources
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.UI.Principal.resources
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.csproj.GenerateResource.cache
 C:\Users\ALFON\source\repos\Proyectofinal\DXApplication4\obj\Debug\SistemaLibreria.exe.licenses

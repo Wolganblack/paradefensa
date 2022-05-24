@@ -10,8 +10,7 @@ using SistemaLibreria;
 using ModeloDatos.ORM;
 using MySql.Data;
 using SistemaLibreria.UIUI;
-
-
+using SistemaLibreria.UI;
 
 namespace SistemaLibreria.UIUI
 {
@@ -30,7 +29,11 @@ namespace SistemaLibreria.UIUI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SistemaLibreria.UI.Principal());
+            Login dlg = new Login();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new SistemaLibreria.UI.Principal());
+            }
         } 
     }
 }
