@@ -87,6 +87,8 @@
             this.Emailclitxt.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Email", true));
             this.Emailclitxt.Location = new System.Drawing.Point(68, 90);
             this.Emailclitxt.Name = "Emailclitxt";
+            this.Emailclitxt.Properties.Mask.EditMask = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            this.Emailclitxt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.Emailclitxt.Size = new System.Drawing.Size(518, 22);
             this.Emailclitxt.StyleController = this.layoutControl1;
             this.Emailclitxt.TabIndex = 16;
@@ -94,7 +96,6 @@
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.ClienteDxValidationProvider.SetValidationRule(this.Emailclitxt, conditionValidationRule5);
             this.Emailclitxt.EditValueChanged += new System.EventHandler(this.Emailclitxt_EditValueChanged_1);
-            this.Emailclitxt.Validating += new System.ComponentModel.CancelEventHandler(this.Emailclitxt_Validating);
             // 
             // ClienteBiindingSource
             // 

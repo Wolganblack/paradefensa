@@ -183,6 +183,7 @@
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.EmailTextEdit, conditionValidationRule5);
+            this.EmailTextEdit.EditValueChanged += new System.EventHandler(this.EmailTextEdit_EditValueChanged);
             // 
             // layoutControlGroup1
             // 

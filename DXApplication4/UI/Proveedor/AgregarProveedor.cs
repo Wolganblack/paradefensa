@@ -79,6 +79,11 @@ namespace DXApplication4.UI.Provedor
         {
 
         }
+
+        private void EmailTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

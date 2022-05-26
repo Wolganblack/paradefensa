@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaProducto));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.GridControlProducto = new DevExpress.XtraGrid.GridControl();
+            this.ListaProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ListaProductoxpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.UnitOfWork1 = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,7 +48,6 @@
             this.MarcaXpCollection = new DevExpress.Xpo.XPCollection(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ListaProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.NuevoBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -61,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProductoxpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -68,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MarcaXpCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,10 @@
             this.GridControlProducto.TabIndex = 4;
             this.GridControlProducto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // ListaProductoBindingSource1
+            // 
+            this.ListaProductoBindingSource1.DataSource = this.ListaProductoxpCollection;
             // 
             // ListaProductoxpCollection
             // 
@@ -213,10 +217,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // ListaProductoBindingSource1
-            // 
-            this.ListaProductoBindingSource1.DataSource = this.ListaProductoxpCollection;
-            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 536);
@@ -326,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridControlProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaProductoxpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -333,7 +334,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MarcaXpCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

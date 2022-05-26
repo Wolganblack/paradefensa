@@ -43,5 +43,19 @@ namespace SistemaLibreria.UI
             this.DialogResult = DialogResult.OK;
 
         }
+
+        private void CancelarSimpleButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Esta seguro que desea salir del sistema?", @"Atención",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.None;
+                UsuarioTextEdit.Focus();
+            }
+        }
     }
 }

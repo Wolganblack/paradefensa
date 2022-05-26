@@ -23,23 +23,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.CancelarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.AceptarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.ClaveTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.UsuarioTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.ClaveTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.AceptarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.CancelarSimpleButton = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClaveTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClaveTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -59,6 +59,44 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // CancelarSimpleButton
+            // 
+            this.CancelarSimpleButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelarSimpleButton.Location = new System.Drawing.Point(257, 64);
+            this.CancelarSimpleButton.Name = "CancelarSimpleButton";
+            this.CancelarSimpleButton.Size = new System.Drawing.Size(242, 27);
+            this.CancelarSimpleButton.StyleController = this.layoutControl1;
+            this.CancelarSimpleButton.TabIndex = 7;
+            this.CancelarSimpleButton.Text = "Cancelar";
+            this.CancelarSimpleButton.Click += new System.EventHandler(this.CancelarSimpleButton_Click);
+            // 
+            // AceptarSimpleButton
+            // 
+            this.AceptarSimpleButton.Location = new System.Drawing.Point(12, 64);
+            this.AceptarSimpleButton.Name = "AceptarSimpleButton";
+            this.AceptarSimpleButton.Size = new System.Drawing.Size(241, 27);
+            this.AceptarSimpleButton.StyleController = this.layoutControl1;
+            this.AceptarSimpleButton.TabIndex = 6;
+            this.AceptarSimpleButton.Text = "Aceptar";
+            this.AceptarSimpleButton.Click += new System.EventHandler(this.AceptarSimpleButton_Click);
+            // 
+            // ClaveTextEdit
+            // 
+            this.ClaveTextEdit.Location = new System.Drawing.Point(58, 38);
+            this.ClaveTextEdit.Name = "ClaveTextEdit";
+            this.ClaveTextEdit.Properties.PasswordChar = '*';
+            this.ClaveTextEdit.Size = new System.Drawing.Size(441, 22);
+            this.ClaveTextEdit.StyleController = this.layoutControl1;
+            this.ClaveTextEdit.TabIndex = 5;
+            // 
+            // UsuarioTextEdit
+            // 
+            this.UsuarioTextEdit.Location = new System.Drawing.Point(58, 12);
+            this.UsuarioTextEdit.Name = "UsuarioTextEdit";
+            this.UsuarioTextEdit.Size = new System.Drawing.Size(441, 22);
+            this.UsuarioTextEdit.StyleController = this.layoutControl1;
+            this.UsuarioTextEdit.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -72,14 +110,6 @@
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(511, 189);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // UsuarioTextEdit
-            // 
-            this.UsuarioTextEdit.Location = new System.Drawing.Point(58, 12);
-            this.UsuarioTextEdit.Name = "UsuarioTextEdit";
-            this.UsuarioTextEdit.Size = new System.Drawing.Size(441, 22);
-            this.UsuarioTextEdit.StyleController = this.layoutControl1;
-            this.UsuarioTextEdit.TabIndex = 4;
             // 
             // layoutControlItem1
             // 
@@ -98,15 +128,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(246, 86);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // ClaveTextEdit
-            // 
-            this.ClaveTextEdit.Location = new System.Drawing.Point(58, 38);
-            this.ClaveTextEdit.Name = "ClaveTextEdit";
-            this.ClaveTextEdit.Properties.PasswordChar = '*';
-            this.ClaveTextEdit.Size = new System.Drawing.Size(441, 22);
-            this.ClaveTextEdit.StyleController = this.layoutControl1;
-            this.ClaveTextEdit.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.ClaveTextEdit;
@@ -116,16 +137,6 @@
             this.layoutControlItem2.Text = "Clave";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(43, 16);
             // 
-            // AceptarSimpleButton
-            // 
-            this.AceptarSimpleButton.Location = new System.Drawing.Point(12, 64);
-            this.AceptarSimpleButton.Name = "AceptarSimpleButton";
-            this.AceptarSimpleButton.Size = new System.Drawing.Size(241, 27);
-            this.AceptarSimpleButton.StyleController = this.layoutControl1;
-            this.AceptarSimpleButton.TabIndex = 6;
-            this.AceptarSimpleButton.Text = "Aceptar";
-            this.AceptarSimpleButton.Click += new System.EventHandler(this.AceptarSimpleButton_Click);
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.AceptarSimpleButton;
@@ -134,15 +145,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(245, 117);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // CancelarSimpleButton
-            // 
-            this.CancelarSimpleButton.Location = new System.Drawing.Point(257, 64);
-            this.CancelarSimpleButton.Name = "CancelarSimpleButton";
-            this.CancelarSimpleButton.Size = new System.Drawing.Size(242, 27);
-            this.CancelarSimpleButton.StyleController = this.layoutControl1;
-            this.CancelarSimpleButton.TabIndex = 7;
-            this.CancelarSimpleButton.Text = "Cancelar";
             // 
             // layoutControlItem4
             // 
@@ -168,11 +170,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClaveTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClaveTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();

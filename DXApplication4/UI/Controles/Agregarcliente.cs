@@ -12,6 +12,7 @@ using ModeloDatos.ORM;
 using System.Net.Mail;
 using DevExpress.Data.Filtering;
 
+
 namespace SistemaLibreria.UI.Controles
 {
     public partial class Agregarcliente : DevExpress.XtraEditors.XtraForm
@@ -55,7 +56,7 @@ namespace SistemaLibreria.UI.Controles
 
         }
 
-        private void Nombreclitxt_KeyDown(object sender, KeyEventArgs e)
+       /* private void Nombreclitxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.Equals(Keys.Enter))
                 Apellidoclitxt.Focus();
@@ -74,10 +75,12 @@ namespace SistemaLibreria.UI.Controles
             if (e.KeyCode.Equals(Keys.Enter))
                Agregarclie1.Focus();
 
-        }
+        }*/
 
-        private void Emailclitxt_Validating(object sender, CancelEventArgs e)
+        private void Emailclitxt_EditValueChanged(object sender, CancelEventArgs e)
         {
+            
+            
             try
             {
                 TextEdit textEdit = (TextEdit) sender;
