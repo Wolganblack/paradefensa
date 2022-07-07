@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregarcliente));
             this.UnitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.ClienteDxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
@@ -55,6 +56,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.DireccionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.UnitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteDxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Emailclitxt.Properties)).BeginInit();
@@ -75,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DireccionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // UnitOfWork
@@ -85,16 +90,16 @@
             // Emailclitxt
             // 
             this.Emailclitxt.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Email", true));
-            this.Emailclitxt.Location = new System.Drawing.Point(68, 90);
+            this.Emailclitxt.Location = new System.Drawing.Point(72, 116);
             this.Emailclitxt.Name = "Emailclitxt";
             this.Emailclitxt.Properties.Mask.EditMask = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             this.Emailclitxt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.Emailclitxt.Size = new System.Drawing.Size(518, 22);
+            this.Emailclitxt.Size = new System.Drawing.Size(535, 22);
             this.Emailclitxt.StyleController = this.layoutControl1;
             this.Emailclitxt.TabIndex = 16;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.ClienteDxValidationProvider.SetValidationRule(this.Emailclitxt, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            this.ClienteDxValidationProvider.SetValidationRule(this.Emailclitxt, conditionValidationRule6);
             this.Emailclitxt.EditValueChanged += new System.EventHandler(this.Emailclitxt_EditValueChanged_1);
             // 
             // ClienteBiindingSource
@@ -109,6 +114,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.DireccionTextEdit);
             this.layoutControl1.Controls.Add(this.MunicipioSearchLookUpEdit);
             this.layoutControl1.Controls.Add(this.Agregarclie1);
             this.layoutControl1.Controls.Add(this.Emailclitxt);
@@ -119,14 +125,14 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(598, 204);
+            this.layoutControl1.Size = new System.Drawing.Size(619, 272);
             this.layoutControl1.TabIndex = 9;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // MunicipioSearchLookUpEdit
             // 
             this.MunicipioSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "MunicipioId!", true));
-            this.MunicipioSearchLookUpEdit.Location = new System.Drawing.Point(68, 116);
+            this.MunicipioSearchLookUpEdit.Location = new System.Drawing.Point(72, 142);
             this.MunicipioSearchLookUpEdit.Name = "MunicipioSearchLookUpEdit";
             this.MunicipioSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.MunicipioSearchLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -135,12 +141,12 @@
             this.MunicipioSearchLookUpEdit.Properties.DisplayMember = "Nombre";
             this.MunicipioSearchLookUpEdit.Properties.PopupView = this.searchLookUpEdit1View;
             this.MunicipioSearchLookUpEdit.Properties.ValueMember = "This";
-            this.MunicipioSearchLookUpEdit.Size = new System.Drawing.Size(518, 22);
+            this.MunicipioSearchLookUpEdit.Size = new System.Drawing.Size(535, 22);
             this.MunicipioSearchLookUpEdit.StyleController = this.layoutControl1;
             this.MunicipioSearchLookUpEdit.TabIndex = 18;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.ClienteDxValidationProvider.SetValidationRule(this.MunicipioSearchLookUpEdit, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.ClienteDxValidationProvider.SetValidationRule(this.MunicipioSearchLookUpEdit, conditionValidationRule2);
             this.MunicipioSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.MunicipioSearchLookUpEdit_EditValueChanged);
             // 
             // XpMunicipioCollection
@@ -159,9 +165,9 @@
             // 
             this.Agregarclie1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Agregarclie1.Appearance.Options.UseFont = true;
-            this.Agregarclie1.Location = new System.Drawing.Point(12, 142);
+            this.Agregarclie1.Location = new System.Drawing.Point(12, 168);
             this.Agregarclie1.Name = "Agregarclie1";
-            this.Agregarclie1.Size = new System.Drawing.Size(574, 28);
+            this.Agregarclie1.Size = new System.Drawing.Size(595, 28);
             this.Agregarclie1.StyleController = this.layoutControl1;
             this.Agregarclie1.TabIndex = 17;
             this.Agregarclie1.Text = "Agregar";
@@ -170,42 +176,42 @@
             // Apellidoclitxt
             // 
             this.Apellidoclitxt.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Apellido", true));
-            this.Apellidoclitxt.Location = new System.Drawing.Point(68, 64);
+            this.Apellidoclitxt.Location = new System.Drawing.Point(72, 64);
             this.Apellidoclitxt.Name = "Apellidoclitxt";
-            this.Apellidoclitxt.Size = new System.Drawing.Size(518, 22);
+            this.Apellidoclitxt.Size = new System.Drawing.Size(535, 22);
             this.Apellidoclitxt.StyleController = this.layoutControl1;
             this.Apellidoclitxt.TabIndex = 14;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.ClienteDxValidationProvider.SetValidationRule(this.Apellidoclitxt, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.ClienteDxValidationProvider.SetValidationRule(this.Apellidoclitxt, conditionValidationRule3);
             // 
             // Nombreclitxt
             // 
             this.Nombreclitxt.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Nombre", true));
-            this.Nombreclitxt.Location = new System.Drawing.Point(68, 38);
+            this.Nombreclitxt.Location = new System.Drawing.Point(72, 38);
             this.Nombreclitxt.Name = "Nombreclitxt";
-            this.Nombreclitxt.Size = new System.Drawing.Size(518, 22);
+            this.Nombreclitxt.Size = new System.Drawing.Size(535, 22);
             this.Nombreclitxt.StyleController = this.layoutControl1;
             this.Nombreclitxt.TabIndex = 13;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.Value2 = "";
-            this.ClienteDxValidationProvider.SetValidationRule(this.Nombreclitxt, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.Value2 = "";
+            this.ClienteDxValidationProvider.SetValidationRule(this.Nombreclitxt, conditionValidationRule4);
             // 
             // Cedulatcli
             // 
             this.Cedulatcli.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Cedula", true));
-            this.Cedulatcli.Location = new System.Drawing.Point(68, 12);
+            this.Cedulatcli.Location = new System.Drawing.Point(72, 12);
             this.Cedulatcli.Name = "Cedulatcli";
             this.Cedulatcli.Properties.Mask.BeepOnError = true;
             this.Cedulatcli.Properties.Mask.EditMask = "\\d\\d\\d-\\d\\d\\d\\d\\d\\d-\\d\\d\\d\\d\\D";
             this.Cedulatcli.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.Cedulatcli.Size = new System.Drawing.Size(518, 22);
+            this.Cedulatcli.Size = new System.Drawing.Size(535, 22);
             this.Cedulatcli.StyleController = this.layoutControl1;
             this.Cedulatcli.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.ClienteDxValidationProvider.SetValidationRule(this.Cedulatcli, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.ClienteDxValidationProvider.SetValidationRule(this.Cedulatcli, conditionValidationRule5);
             this.Cedulatcli.EditValueChanged += new System.EventHandler(this.Cedulatcli_EditValueChanged);
             // 
             // layoutControlGroup1
@@ -218,26 +224,27 @@
             this.layoutControlItem8,
             this.layoutControlItem5,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(598, 204);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(619, 272);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.Emailclitxt;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 104);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(578, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(599, 26);
             this.layoutControlItem2.Text = "Email";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.Agregarclie1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 130);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 156);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(578, 54);
+            this.layoutControlItem1.Size = new System.Drawing.Size(599, 96);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -246,42 +253,64 @@
             this.layoutControlItem8.Control = this.Cedulatcli;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(578, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(599, 26);
             this.layoutControlItem8.Text = "Cedula";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.Nombreclitxt;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(578, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(599, 26);
             this.layoutControlItem5.Text = "Nombre";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.MunicipioSearchLookUpEdit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 104);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 130);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(578, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(599, 26);
             this.layoutControlItem3.Text = "Municipio";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(57, 16);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.Apellidoclitxt;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(578, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(599, 26);
             this.layoutControlItem4.Text = "Apellido";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(53, 16);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(57, 16);
+            // 
+            // DireccionTextEdit
+            // 
+            this.DireccionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ClienteBiindingSource, "Direccion", true));
+            this.DireccionTextEdit.Location = new System.Drawing.Point(72, 90);
+            this.DireccionTextEdit.Name = "DireccionTextEdit";
+            this.DireccionTextEdit.Size = new System.Drawing.Size(535, 22);
+            this.DireccionTextEdit.StyleController = this.layoutControl1;
+            this.DireccionTextEdit.TabIndex = 19;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = "<Null>";
+            this.ClienteDxValidationProvider.SetValidationRule(this.DireccionTextEdit, conditionValidationRule1);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.DireccionTextEdit;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(599, 26);
+            this.layoutControlItem6.Text = "Direccion:";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(57, 16);
             // 
             // Agregarcliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 204);
+            this.ClientSize = new System.Drawing.Size(619, 272);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -310,6 +339,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DireccionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +366,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.Xpo.XPCollection XpMunicipioCollection;
         private System.Windows.Forms.BindingSource ClienteBiindingSource;
+        private DevExpress.XtraEditors.TextEdit DireccionTextEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

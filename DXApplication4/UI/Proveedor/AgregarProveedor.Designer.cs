@@ -157,6 +157,7 @@
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.AgregarProveedorDxValidationProvider1.SetValidationRule(this.DireccionTextEdit, conditionValidationRule3);
+            this.DireccionTextEdit.EditValueChanged += new System.EventHandler(this.DireccionTextEdit_EditValueChanged);
             // 
             // RepresentateTextEdit
             // 

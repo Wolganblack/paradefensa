@@ -36,7 +36,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.CantidadTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.FechaDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -403,9 +402,6 @@
             this.ClienteSearchLookUpEdit.Size = new System.Drawing.Size(391, 22);
             this.ClienteSearchLookUpEdit.StyleController = this.layoutControl1;
             this.ClienteSearchLookUpEdit.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "This value is not valid";
-            this.AgregarFacDxValidationProvider.SetValidationRule(this.ClienteSearchLookUpEdit, conditionValidationRule6);
             // 
             // ClienteXpCollection
             // 
@@ -427,8 +423,8 @@
             this.FacturaTextEdit.Size = new System.Drawing.Size(151, 22);
             this.FacturaTextEdit.StyleController = this.layoutControl1;
             this.FacturaTextEdit.TabIndex = 7;
-            conditionValidationRule7.ErrorText = "This value is not valid";
-            this.AgregarFacDxValidationProvider.SetValidationRule(this.FacturaTextEdit, conditionValidationRule7);
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            this.AgregarFacDxValidationProvider.SetValidationRule(this.FacturaTextEdit, conditionValidationRule6);
             // 
             // layoutControlGroup1
             // 

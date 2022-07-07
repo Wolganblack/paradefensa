@@ -151,8 +151,9 @@
             this.NombreTextEdit.Size = new System.Drawing.Size(344, 22);
             this.NombreTextEdit.StyleController = this.dataLayoutControl1;
             this.NombreTextEdit.TabIndex = 4;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = "<Null>";
             this.ProductoDxValidationProvider.SetValidationRule(this.NombreTextEdit, conditionValidationRule1);
             // 
             // ProductosXpCollection
@@ -178,8 +179,9 @@
             this.DescripcionMemoExEdit.Size = new System.Drawing.Size(354, 22);
             this.DescripcionMemoExEdit.StyleController = this.dataLayoutControl1;
             this.DescripcionMemoExEdit.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = "<Null>";
             this.ProductoDxValidationProvider.SetValidationRule(this.DescripcionMemoExEdit, conditionValidationRule2);
             // 
             // ColorTextEdit
@@ -190,8 +192,9 @@
             this.ColorTextEdit.Size = new System.Drawing.Size(344, 22);
             this.ColorTextEdit.StyleController = this.dataLayoutControl1;
             this.ColorTextEdit.TabIndex = 6;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = "<Null>";
             this.ProductoDxValidationProvider.SetValidationRule(this.ColorTextEdit, conditionValidationRule3);
             // 
             // ExistenciasTextEdit

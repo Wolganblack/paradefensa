@@ -84,6 +84,11 @@ namespace DXApplication4.UI.Provedor
         {
 
         }
+
+        private void DireccionTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
